@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{26D070F2-A9F4-4432-B604-26DB37BB733D}</ProjectGuid>
+    <ProjectGuid>{161863A6-76D8-47A1-95D2-4B292FB36F38}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Api.Samples.Domain</RootNamespace>
-    <AssemblyName>Api.Samples.Domain</AssemblyName>
+    <RootNamespace>Api.Samples.Services</RootNamespace>
+    <AssemblyName>Api.Samples.Services</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,10 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="models\todo.cs" />
     <Compile Include="Properties\assembly_info.cs" />
-    <Compile Include="repositories\common\repository_interface.cs" />
+    <Compile Include="todo_service.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\api-samples-data\api-samples-data.csproj">
+      <Project>{6aaee64d-7aa1-436d-8b8d-52d9e5ef0823}</Project>
+      <Name>api-samples-data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\api-samples-domain\api-samples-domain.csproj">
+      <Project>{26d070f2-a9f4-4432-b604-26db37bb733d}</Project>
+      <Name>api-samples-domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

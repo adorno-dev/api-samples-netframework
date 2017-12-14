@@ -18,6 +18,7 @@ namespace Api.Samples.WebApi
 
         public void Configuration(IAppBuilder app)
         {
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
             config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(
                 name: "default",
